@@ -19,7 +19,7 @@ interface GameState {
     chat: ChatMessage[];
 }
 
-const socket = io('http://localhost:5000', {
+const socket = io('https://hitwicket-server.vercel.app/', {
     transports: ['websocket'],
     upgrade: false,
 });
