@@ -19,10 +19,7 @@ interface GameState {
     chat: ChatMessage[];
 }
 
-const socket = io('https://hitwicket-server.vercel.app/', {
-    transports: ['websocket'],
-    upgrade: false,
-});
+const socket = io('https://hitwicket-server.vercel.app/'|| 'http://localhost:3000');
 
 const SpectatorView: React.FC = () => {
     const [gameState, setGameState] = useState<GameState>({

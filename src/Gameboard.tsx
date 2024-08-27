@@ -11,10 +11,7 @@ interface GameState {
     players: { [key: string]: { id: string, username: string } }; // Player information
 }
 
-const socket = io('https://hitwicket-server.vercel.app/', {
-    transports: ['websocket'],
-    upgrade: false,
-});
+const socket = io('https://hitwicket-server.vercel.app/'|| 'http://localhost:3000');
 
 const GameBoard: React.FC = () => {
     const [gameState, setGameState] = useState<GameState>({
@@ -305,4 +302,3 @@ const GameBoard: React.FC = () => {
 };
 
 export default GameBoard;
-
