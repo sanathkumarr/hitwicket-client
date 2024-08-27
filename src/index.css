@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Piece Movement Animation */
+.movable-piece {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Highlighting Valid Moves */
+.valid-move {
+  background-color: rgba(255, 255, 0, 0.5); /* Yellow highlight */
+  transition: background-color 0.3s ease;
+}
+
+.valid-move:hover {
+  background-color: rgba(255, 255, 0, 0.8); /* Brighten on hover */
+}
+
+/* Shake Effect for Invalid Moves */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.invalid-move {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Fade In/Out for New Game */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 1s ease forwards;
+}
+
+/* Dark Theme with Smooth Transitions */
+body {
+  background-color: #1a202c; /* Dark background */
+  color: #cbd5e0; /* Light text */
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+button, .btn {
+  background-color: #2d3748; /* Darker button */
+  color: #e2e8f0; /* Light text */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #4a5568; /* Lighten on hover */
+}
+
